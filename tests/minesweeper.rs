@@ -56,7 +56,6 @@ fn board_with_only_mines() {
 }
 
 #[test]
-#[ignore]
 fn mine_surrounded_by_spaces() {
     #[rustfmt::skip]
     run_test(&[

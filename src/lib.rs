@@ -105,10 +105,11 @@ impl Minefield {
 
 pub fn annotate(minefield: &[&str]) -> Vec<String> {
     let nr_rows= minefield.len();
-    let mut nr_cols = 0;
-    if nr_rows > 0 {
-        nr_cols = minefield[0].len();
-    }
+    let nr_cols = if nr_rows > 0 {
+        minefield[0].len()
+    } else {
+        0
+    };
 
     let mut field = Minefield::new(nr_rows, nr_cols);
     field.update(minefield);
